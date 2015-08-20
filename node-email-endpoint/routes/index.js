@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/emails';
+var connectionString = process.env.DATABASE_URL || 'postgres://aqnzjqbxjaqcya:a0y2Ij41opP2bfAbrCtyN2zfbg@ec2-54-197-255-248.compute-1.amazonaws.com:5432/d2ab9jp36cfls6';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  pg.connect(connectionString, function(err, client, done) {
+    var query = client.query("SELECT * FROM users ORDER BY id ASC");
+    res.send(query);
+  })
   res.render('index', { title: 'Clearhead Email Catcher' });
 });
 
