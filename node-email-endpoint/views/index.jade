@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Clearhead Email Catcher
+
+  #wrapper
+    #sign-in-container
+      h3 Sign in to collect mailing list submissions
+      input.email(placeholder='email')
+      input.password(placeholder='password')
+      button Sign In
