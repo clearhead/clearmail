@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Clearhead Email Catcher' });
 });
 
+// post to homepage
+router.post('/', function(req, res, next) {
+ res.send('Cross origin post allowed!')
+});
+
 module.exports = router;
