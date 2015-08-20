@@ -7,9 +7,8 @@ var connectionString = process.env.DATABASE_URL || 'postgres://aqnzjqbxjaqcya:a0
 router.get('/', function(req, res, next) {
   pg.connect(connectionString, function(err, client, done) {
     var query = client.query("SELECT * FROM users ORDER BY id ASC");
-    res.send(query);
   });
-  // res.render('index', { title: 'Clearhead Email Catcher' });
+  res.render('index', { title: 'Clearhead Email Catcher' });
 });
 
 // post to homepage
