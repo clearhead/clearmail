@@ -8,13 +8,13 @@ router.get('/', function(req, res, next) {
   pg.connect(connectionString, function(err, client, done) {
     var query = client.query("SELECT * FROM users ORDER BY id ASC");
     res.send(query);
-  })
-  res.render('index', { title: 'Clearhead Email Catcher' });
+  });
+  // res.render('index', { title: 'Clearhead Email Catcher' });
 });
 
 // post to homepage
 router.post('/', function(req, res, next) {
- res.send('Cross origin post allowed!')
+ res.send('Cross origin post allowed!');
 });
 
 router.post('/api/adduser', function(req, res) {
