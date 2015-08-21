@@ -61,7 +61,7 @@ router.post('/api/vitamix-2', function(req, res) {
     pg.connect(connectionString, function(err, client, done) {
 
         // SQL Query > Insert Data
-        client.query("INSERT INTO vitamixExp2 VALUES (country, userage, email) values($1, $2, $3)", [data.country, data.useage, data.email]);
+        client.query("INSERT INTO vitamixExp2(country, userage, email) values($1, $2, $3)", [data.country, data.useage, data.email]);
 
         // Handle Errors
         if(err) {
