@@ -7,13 +7,13 @@ var connectionString = process.env.DATABASE_URL || 'postgres://aqnzjqbxjaqcya:a0
 router.get('/', function(req, res, next) {
   pg.connect(connectionString, function(err, client, done) {
     var query = client.query("SELECT * FROM users ORDER BY id ASC");
-  })
+  });
   res.render('index', { title: 'Clearhead Email Catcher' });
 });
 
 // post to homepage
 router.post('/', function(req, res, next) {
- res.send('Cross origin post allowed!')
+ res.send('Cross origin post allowed!');
 });
 
 router.post('/api/adduser', function(req, res) {
@@ -55,7 +55,7 @@ router.post('/api/adduser', function(req, res) {
 router.post('/api/vitamix-2', function(req, res) {
 
     // Grab data from http request
-    var data = {email: req.body.email, use: req.body.use};
+    var data = {country: req.body.country, usage: req.body.usage, email: req.body.email};
 
     // Get a Postgres client from the connection pool
     pg.connect(connectionString, function(err, client, done) {
