@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var vitamix2 = require('./routes/vitamix-2');
+// var vitamix2 = require('./routes/vitamix-2');
 
 var app = express();
 
