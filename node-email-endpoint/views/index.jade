@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Clearhead Email Catcher
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+  script(src='/javascripts/global.js')
+
+  #wrapper
+    #sign-in-container
+      h3 Add a User
+      input.email(placeholder='email')
+      input.fullname(placeholder='full name')
+      button Add
+
+    #user-list
+      h3 User List
+        ul
