@@ -53,10 +53,10 @@ router.post('/', function(req, res) {
         }
 
         // if no error send response
-        // else {
-        //   res.send('Email successfully saved to clearhead email catcher');
-        //   client.end();
-        // }
+        else {
+          res.send('Email successfully saved to clearhead email catcher');
+          client.end();
+        }
 
     });
 
